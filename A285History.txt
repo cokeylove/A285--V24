@@ -1,0 +1,170 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++
+product name:                    ThingkPad A285 
+project name (TDMS):             A285          
+PLM code:                        A285
+EC chip /charger IC:             ITE8186 / BQ2570X
+temperature:                     SMBUS(thermistor) 
+base on:                         A275 
+++++++++++++++++++++++++++++++++++++++++++++++++++
+=======================================================================================
+R0XHT23WW: Release 24 version EC.
+=======================================================================================
+1,A285D00077:fix high watt adapater plug in without blink when low-watt adapter exist.
+2,A285D00078:fix power-led on while simulate close-lid.
+3,A285D00079:fix dash communication fail for IER register not configure from sleep to wakeup.
+4,A285D00080:DC mode system init disable wlan and powerbtn
+=======================================================================================
+R0XHT23WW: Release 23 version EC.
+=======================================================================================
+1,A285D00073:fix keyboard no function at bios setup menu
+2,A285D00074:fix dash sometimes communication fail
+3,A285D00075:add PD cowork flow for pd chip process command too slow.
+4,A285D00076:import clear fud and shipmode double-check flow 
+=======================================================================================
+R0XHT22WW: Release 22 version EC.
+========================================================================================
+1,A285D00070:fix 3vALW cannot low.
+2,A285D00071:add PD communicate check flow.
+3,A285D00072:Enable G3 DC-mode wake-on-lan.
+=======================================================================================
+R0XHT21WW: Release 21 version EC.
+========================================================================================
+1,A285D00064: Enable WLan power when EC initile.
+2,A285D00065: Add PD control for i2c retry--ti spec
+3,A285D00066: fix cs18-dock S5 adapter in light unbrightness.
+4,A285D00067: BIOS set a flag when into BIOS setup for fix internal keyboard error beep
+5,A285D00068: When unsupport adaptor plug out clear the error bit
+6,A285D00069: Add retry 5 times for fix insert CS18 Dock show unkown adaptor error
+=======================================================================================
+R0XHT20WW: Release 20 version EC.
+========================================================================================
+1,A285D00059: fix battery low voltage judge fail.
+2,A285D00060: add work-run for WindowsToGo Test fail when test with 64GB key
+3,A285D00061: fix whql test fail issue.
+4,A285D00062: fix keyboard noise when crazy press.
+5,A285D00063: add wol flag when power sequence from s3 to s0.
+=======================================================================================
+R0XHT19WW: Release 19 version EC.
+========================================================================================
+1.A285D00055: fix battery auth success bios show error for status unsync
+2,A285D00056: fix cs18 dock led blink on s5 mode plug-in.
+3.A285D00057: Add get cpu temprature fail do not shutdown
+4,A285D00058: fix watchdog timer intreval to 2min
+=======================================================================================
+R0XHT18WW: Release 18 version EC.
+========================================================================================
+1,A285D00050: add battery verify debounce sequence
+2,A285D00051: new fan table spec implementation 
+3,A285D00052: add stp(skin temperature protection) function for thermal
+4.A285D00053: Add write PS8801 for EE required in S5 to S0
+5.A285D00054: Enable USB_RE_Enable Pin
+=======================================================================================
+R0XHT17WW: Release 17 version EC.
+========================================================================================
+1.A285D00047: fix charge ic volatage adapter
+2.A285D00048: Add unsupport adapter process,set flag for bios,close ac in
+3,A285D00049: fix usb3.0 identify abnormal
+=======================================================================================
+R0XHT16WW: Release 16 version EC.
+========================================================================================
+1.A285D00043:fix backlight led blink breath as lenovo spec
+2.A285D00044:fix dual-battery shipmode ec hangup with black screen
+3.A285D00045:Change charge voltage to 13V
+4.A285D00046:Fix unsupport Lenovo 45W adaptor
+=======================================================================================
+R0XHT15WW: Release 15 version EC.
+========================================================================================
+1.Upgrade common code to A485
+2.A285D00043: modify for A285 SIT SCH change
+=======================================================================================
+R0XHT14WW: Release 14 version EC.
+========================================================================================
+1.Upgrade version number
+2,A285D00041:Fix sysem cannot be WoLAN from S5 (G3 then plugin AC) with magic packet
+3,A285D00042:Fix backlight led blink reverse between performance and cool mode
+=======================================================================================
+R0XHT13WW: Release 13 version EC.
+========================================================================================
+1. Upgrade the EC version number
+2. A285D00037: Modify for LG Bat RSOC=0x64 but full charge bit not set
+3. Enable AC S5 EC into sleep mode when battery full charge 
+4. A285D00038: Delete the code of UCSI support UPF and DRP mode 
+5. A285D00039: Fix battery can not run SHA1 Auth 
+6. A285D00040: Add fan vender 3
+=======================================================================================
+R0XHT12WW: Release 12 version EC.
+========================================================================================
+1.A285D00035: Add KB LED blink when change thermal mode follow 485
+2.A285D00036: Add 45W adaptor charge parameter
+=======================================================================================
+
+R0XHT11WW: Release 11 version EC.
+========================================================================================
+
+1.A285D00032: Modify fan control follow a285 fan table 2018.2.05
+2.A285D00033: Fix DC S5 power consumption over spec.
+3.A285D00034: Change version number
+========================================================================================
+R0XHT10WW: Release 10 version EC.
+========================================================================================
+1.A285D00031: Add minimum voltage for battery authentication
+========================================================================================
+R0XHT09WW: Release 09 version EC.
+========================================================================================
+1.A285D00024: Fix BIOS wake on LAN Fail
+2.A285D00025: Add Battery HW AUTH Fail Count
+3.A285D00026: Add battery RSOC=0 shutdown
+4.A285D00027: Fix exception by /0
+5.A285D00028: Modify fan table for thermal test
+6.A285D00029: Modify power sequence for 4S shutdown auto boot
+========================================================================================
+R0XHT08WW: Release 08 version EC.
+========================================================================================
+1.Upgrade EC FW version number
+2.Upgrade OEM_ucsi and Oem_tps65988
+3.A285D00018: Pull high RSMRST when AC-In for Type-C Display issue
+4.A285D00019: Workaround for TP lose function
+5.A285D00020: Workaround for Beep function test fail
+6.A285D00021: Workaround for BIOS hang logo
+7.A285D00022: Disable support IFC for thermal change
+8.A285D00023: Change Read_VDDPALWPWRGD to Read_09VALWS_PWRGD
+========================================================================================
+R0XHT07WW: Release 07 version EC.
+========================================================================================
+1.A285D00016:Modify message'Bottom Acess Tamper de'
+2.A285D00017: Fix wake on lan fail
+========================================================================================
+R0XHT06WW: Release 06 version EC.
+========================================================================================
+1.A285D00010: Modify fan setting for A285 project.
+2.A285D00011: Update OEM_TPS65988.c for Docking wake on lan.
+3.A285D00012: Enable display adaptor watt
+4.A285D00013: Enable Dash function
+5.A285D00014: Enable Keyboard Fn& Ctrl swap function
+6.A285D00015: Change GPIO setting (GPC3 USBA_RE_RST# Default set to high,GPE7 USBA_RE_EN default setting to high)
+========================================================================================
+R0XHT05WW: Release 05 version EC.
+========================================================================================
+1.A285D00008: Add fan table A285_FAN_Control_Table_PWM_FVT_V00_2018-0118.
+2.A285D00009: Change to support single battery
+========================================================================================
+R0XHT04WW: Release 04 version EC.
+========================================================================================
+1.Change PD operation to tps65988
+2.A285D00003: As EE required setting TP reset to low in S5
+3.A285D00004: Fix auto boot on after 8S reset.
+4.A285D00005: Fix Fn & Left Ctrl swap no function
+5.A285D00006: Fix Update BIOS&EC FW EC hang up.
+6.A285D00007: Change charge LED control pin
+========================================================================================
+R0XHT03WW: Release 03 version EC.
+========================================================================================
+1.A285D00002: Fixed battery unlock ship mode fail.  
+========================================================================================
+R0XHT01WW: Release 01 version EC.
+========================================================================================
+1.A285D00001: Copy for A485 V05 and change project name
+
+
+
+

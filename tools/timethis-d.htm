@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<HTML DIR="LTR">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Timethis.exe: Timethis</TITLE>
+
+<STYLE TYPE="text/css">
+body	{ color: #000000;
+		background: #FFFFFF;	  
+		font-size: 70%;			
+		font-family: Verdana, Arial, Sans Serif; }
+h1
+		{ font-size: 125%; 
+		margin-bottom:" .5em"; clear:both; }
+h2
+		{ font-size: 110%;  
+		margin-top: "1.5em";
+		margin-bottom:" .5em"; clear:both; }
+h3
+		{ font-size: 100%; 
+		margin-top: "1.2em";  
+		margin-bottom: ".5em"; clear:both; }
+h4
+		{ font-size: 100%; 
+		margin-top: "1.2em";  
+		margin-bottom: ".5em"; clear:both; }
+p
+		{ margin-top:" .6em"; 
+		margin-bottom: ".6em"; }
+ol
+		{ margin-top: ".5em"; 
+		margin-bottom: 0; 
+		margin-left: "2.1em"; 
+		padding-left: "0em";
+		margin-right:"2.1em" }
+ul
+		{ margin-top: ".6em";	 
+		margin-bottom: 0;
+		list-style-type: disc;
+		margin-left: "1.5em";
+		padding-left: "0em";
+		margin-right: "1.5em"; }
+li
+		{ margin-bottom: ".7em"; clear:both; }
+p.browse
+		{text-align: right;
+		margin-top: -.5em;
+		margin-bottom: -.5em;}
+p.note, p.tip, p.important, p.caution, p.warning
+		{ font-weight:bold;
+		clear:both; margin-top: "1.2em";
+		margin-bottom: "-.4em"; }
+p.alert
+	{ margin-left: 1.5em; 
+	margin-top: -1.em; margin-bottom: -.3em; font-weight: bold } 
+
+p.indent	
+		{ margin-left: "1.3em"; }		   
+		/* this class style is used to indent text for notes and warnings; use this instead of the blockquote tag */
+p.topics	{font-weight: bold}
+p.info		{font-weight: bold}
+p.files		{font-weight: bold}
+p.syntax	{background: #dddddd;
+			margin-top: 1em; 
+			margin-bottom: 1em;}
+dl		{margin-top: -.5em;}
+dt.SyntaxTerm {font-weight: normal}
+a.poplink
+		{ color: "#000000";
+		cursor: "text";
+		text-decoration: "none"; }
+table
+		{ font-size: 100%;
+		margin-top: 1em; 
+		margin-bottom: 1em; 
+		cellpadding: 0.5em; }
+		
+th
+		{ text-align: left;
+		background: #dddddd;
+		vertical-align: bottom;
+		padding: .2em;
+		padding-left: .45em;
+		padding-right: .5em; }
+		
+tr
+		{ vertical-align: top; }
+
+td
+		{ background: #EEEEEE;
+		vertical-align: top;
+		padding: .2em;
+		padding-left: .45em;
+		padding-right: .5em; }
+
+</STYLE>
+
+ 
+
+</HEAD>
+
+<BODY>
+
+
+<H1>Timethis.exe: Timethis</H1>
+
+
+<HR>
+
+<P>This command-line tool times how long it takes the system to run a command.</P>
+
+<P>Timethis is useful for determining the start, end, and elapsed run times of any command. It can be used interactively and to time commands in .bat and .cmd files. Prefix one or more of the commands you want to time with the Timethis command.</P>
+
+<P>To use Timethis, provide the name of the command you want to time. Timethis runs the specified command, and then reports the start and finish times for the command, and how long it took to run in HH:MM:SS.TTT format.</P>
+
+
+
+<P CLASS="files">File Required</P>
+<UL>
+     <LI>Timethis.exe</LI>
+</UL>
+
+<A NAME="timethis_topics"></A>
+<P CLASS="topics">Timethis Topics</P>
+<UL>
+	 <LI><A HREF="#timethis_syntax">Timethis Syntax</A></LI>
+	 <LI><A HREF="#timethis_examples">Timethis Example</A></LI>
+</UL>
+
+<A NAME="timethis_syntax"></A>
+<HR>
+<P class="browse"><A HREF="#top">top</A></P>
+<H2>Timethis Syntax</H2>
+<HR>
+
+<P CLASS="syntax"><b>TIMETHIS</b> <i>commandname</i></P>
+
+<P>Where:</p>
+
+<DL>
+
+<DT CLASS="SyntaxTerm"><i>commandname</i></DT>
+<DD>specifies the name of the command you want executed and timed.</DD>
+
+</DL>
+
+<p>You can also specify the arguments for the command. For example, to time the command, <nobr><b>net use x: \\server\share /user:billybob</b></nobr>, type the following at the command line:</p>
+
+<p><CODE><b>timethis  net use x: \\server\share /user:billybob</b></CODE></p>
+
+
+<p>You must put quotation marks around the command when the command involves redirection symbols such as &lt;, &gt;, &gt; &gt;, or |. Quotation marks ensure that the redirection is applied to the command being timed, rather than the Timethis command itself. For example, you might type:</p>
+
+<P><CODE><B>timethis &quot;dir &gt; dirlist.txt&quot;</b></CODE></p>
+
+
+<P><B>Note</B></P>
+<UL>
+	<LI>If you do not direct the Timethis output to a file, you must work in the command window. If you do choose to direct the Timethis output to a file, you can run the command from the command window or from the Run dialog box in Windows 2000.</LI>
+</UL>
+
+<A NAME="timethis_examples"></A>
+<HR>
+<P class="browse"><A HREF="#top">top</A></P>
+<H2>Timethis Example</H2>
+<HR>
+
+<H3>Example: Time a Dir Command</H3>
+<p>To time how long it takes the computer to execute a Dir command of the c:\users\default\temp directory, type the following at the command line:</P>
+<P><CODE><B>timethis dir c:\users\default\temp</B></CODE></P>
+
+<P>This command produces the following output in the command window (lines in bold type are Timethis output):</P>
+
+<PRE><CODE>
+<B>TimeThis : Command Line : DIR C:\USERS\DEFAULT\TEMP
+
+TimeThis :  Start Time : Thu Aug 03 11:23:22 1995</B>
+
+   Volume in drive C has no label.
+
+   Volume Serial Number is 8C25-C783
+
+   Folder of C:\USERS\DEFAULT\TEMP
+
+03/08/95  11:04         &lt;DIR&gt;          .
+
+03/08/95  11:04         &lt;DIR&gt;          ..
+
+20/03/95  12:31                 54,717 BIGLMH
+
+20/03/95  14:57                 55,801 HOSTS
+
+20/03/95  14:57                 55,801 LMHOSTS
+
+17/03/95  05:10                 24,274 LMHOSTS.000
+
+               6 File(s)        190,593 bytes
+
+                               39,556,096 bytes free
+
+<B>TimeThis :  Command Line :  DIR C:\USERS\DEFAULT\TEMP
+
+TimeThis :    Start Time :  Thu Aug 03 11:23:22 1995
+
+TimeThis :      End Time :  Thu Aug 03 11:23:23 1995
+
+TimeThis :  Elapsed Time :  00:00:00.972</B>
+
+C:\&gt;
+</CODE></PRE>
+
+</BODY>
+</HTML>
+

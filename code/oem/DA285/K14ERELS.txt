@@ -1,0 +1,650 @@
+Filename : K14ERELS.TXT
+Release Notification
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E030A.ROM)		10-06-2017
+
+File name : K14E030A.ROM
+Base on   : K14E029A.ROM
+Checksum  : 0x01483F5F
+EC Version S/N: 30
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+N/A
+
+Known issue:
+N/A
+
+Modified:
+N/A
+
+Add function:
+1. Add command to improve Tamper WWAN detect.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E029A.ROM)		09-14-2017
+
+File name : K14E029A.ROM
+Base on   : K14E028A.ROM
+Checksum  : 0x0148C93C
+EC Version S/N: 29
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "Charge current always under 500mA".
+
+Known issue:
+N/A
+
+Modified:
+N/A
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E028A.ROM)		09-11-2017
+
+File name : K14E028A.ROM
+Base on   : K14E027A.ROM
+Checksum  : 0x0148C1AE
+EC Version S/N: 28
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Always enable thermal monitor to patch MFG battery test fail.
+
+Known issue:
+N/A
+
+Modified:
+1. Improve ship mode process and add ship mode log.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E027A.ROM)		08-31-2017
+
+File name : K14E027A.ROM
+Base on   : K14E026A.ROM
+Checksum  : 0x01493E31
+EC Version S/N: 27
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "Battery capacity reset no function by MFG battery control tool".
+2. Fix issue "Unit resume from shutdown when set critical baterry action to S3 and idle for overnight".
+3. Fix issue "System shut down after inserting external battery at BIOS interface".
+
+Known issue:
+N/A
+
+Modified:
+1. Add clock gate config in EC power on init.
+2. Disable CPU and external sensor P-stage protect for AMD request.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E026A.ROM)		08-17-2017
+
+File name : K14E026A.ROM
+Base on   : K14E025A.ROM
+Checksum  : 0x014A0E94
+EC Version S/N: 26
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "Keyboard backlight no function on BIOS setup".
+2. Fix issue "System shut down after inserting external battery at BIOS interface".
+3. Fix issue "EC will send VDM package to PD when system stage change once attached docking.".
+4. Fix issue "Disable power button function fail when BIOS/EC flashing.".
+
+Known issue:
+N/A
+
+Modified:
+1. Modify adaptor out PROCHOT protect behavior for HW request(PROCHOT high 100ms).
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E025A.ROM)		08-10-2017
+
+File name : K14E025A.ROM
+Base on   : K14E024A.ROM
+Checksum  : 0x014A6C4F
+EC Version S/N: 25
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "System can't wake from S3 when battery remain capacity less 300mWh".
+2. Fix issue "Battery capacity control fail on MFG under 1 battery attached".
+3. Fix issue "No keyboard backlight icon on Win10 OS".
+4. Fix issue "Press FN+4 can't turn off display".
+
+Known issue:
+N/A
+
+Modified:
+1. Disable PWM clk when EC entry sleep mode.
+2. Improve TPS65982 clear "DEAD_BATTERY_FLAG" process method.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E024A.ROM)		08-07-2017
+
+File name : K14E024A.ROM
+Base on   : K14E023A.ROM
+Checksum  : 0x014A7749
+EC Version S/N: 24
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "Power button LED no blink when attach Type-C adapter under S3.".
+
+Known issue:
+N/A
+
+Modified:
+1. Update WV4 new thermal table and change external sensor trigger to 52C/50C for thermal team request.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E023A.ROM)		08-01-2017
+
+File name : K14E023A.ROM
+Base on   : K14E022A.ROM
+Checksum  : 0x014A768E
+EC Version S/N: 23
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "System will pop 'Battery HW Authentication Fail' error message when restart system and hot detaching and attaching the Removable battery.".
+2. Fix ECR439389 : Battery power drain fast when run battery test.
+
+Known issue:
+N/A
+
+Modified:
+1. Change the charger IC setting sequence as power recommend.
+2. Improve the "PM THRESHOLD" checking method.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E022A.ROM)		07-25-2017
+
+File name : K14E022A.ROM
+Base on   : K14E021A.ROM
+Checksum  : 0x014B2FB1
+EC Version S/N: 22
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "FnLock hotkey (Fn+ESC) does not work under shell".
+2. Fix issue "Power button LED kept OFF after Power On with NO memory installed.".
+3. Fix issue "UUT occur cannot boot when run Power ON_OFF Test with MIKE II.".
+4. Fix issue "AC Wattage is Only Reported Through Battery 1 SBIG Information".
+5. Fix issue "Power button LED blink 4 times when attach Type-C adapter under S4 and S5 state".
+6. Fix issue "LGC Battery FW update failed".
+Known issue:
+N/A
+Modified:
+1. Update UCSI function to ITE UCSI common code v6.
+2. Record EC SMB protocol register data for BIOS check that for system hang logo issue.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E021A.ROM)		07-18-2017
+
+File name : K14E021A.ROM
+Base on   : K14E020A.ROM
+Checksum  : 0x014C00DE
+EC Version S/N: 21
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "Bottom cover tamper no function under DC mode".
+2. Fix Winflash tool can not executed on Windows.
+3. Fix issue "ESC LED keep on when force shut down unit before enter OS.".
+4. Fix issue "System will pop 'Battery HW Authentication Fail' error message when restart system and hot detaching and attaching the Removable battery.".
+5. Fix WHLK test fail item "Swap control".
+6. Fix issue "The hidden keys(B/P/S/K/PrtSc) have no function after resume from S3. when select Fn Sticky Key Method.".
+7. Fix issue "UUT can't been charged when run AC_DC Reliability Test.".
+Known issue:
+N/A
+Modified:
+1. Improve GPU throttling control.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E020A.ROM)		07-12-2017
+
+File name : K14E020A.ROM
+Base on   : K14E019A.ROM
+Checksum  : 0x014D47F3
+EC Version S/N: 20
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "Remaining time of no activity battery doesn't report to PM driver".
+2. Fix hot key "Fn+Esc" function will be active when press hot key "Fn+space".
+3. Fix issue "Logo LED will flash when attaching type-c adaptor with S5+DC".
+Known issue:
+N/A
+Modified:
+1. Update Windu thermal table to "DA475_FAN_Control_Table_PWM_SIT_V07(Trial).xls".
+
+Add function:
+1. Implement UCSI function.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E019A.ROM)		07-05-2017
+
+File name : K14E019A.ROM
+Base on   : K14E018A.ROM
+Checksum  : 0x01616E30
+EC Version S/N: 19
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "Unlock FN, 'B'¡B'P'¡B'S'¡B'K' Key will stillshow Hidden function when selected'Fn Sticky Key".
+2. Fix Qevent 4B/4D will always trigger when battery stop charge, and Q4B/Q4D reverse.
+3. Fix issue "[Windu/WV4 AMD Win7&Win10]The function of some keys are incorrect on the keyboard when press Fn+B and release Fn first.. FR:4/4".
+Known issue:
+N/A
+Modified:
+1. Change External sensor protect active from "AC_PRESENT on/off" to "P0/ Pmax/2" for thermal request.
+2. Update WV4 thermal table to "WV4_AMD_FAN_Control_Table_ver19_20170704.xls" for thermal team request.
+3. Implement max power for power team request.
+4. Change GPIO setting before EC entry sleep mode to reduce S5 & G3 DC mode power consumption for HW request.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E018A.ROM)		06-29-2017
+
+File name : K14E018A.ROM
+Base on   : K14E017A.ROM
+Checksum  : 0x01630b74
+EC Version S/N: 18
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1.Fix ECR438258 it show"/" not "?" when press "shift" and "?" same time
+2.Fix battery error status report error when battery over discharge.
+3.Fix battery fast charge flag don't be set when trickle switch to fast
+4.Fix issue "System can cot detect Type-C adaptor"
+5.Fix issue "The system will show unknow battery when battery communication fail(Over discharging)"
+6.Fix issue "Main battery keep show "Discharging" when 2nd battery is discharging"
+7.Fix system cannot trickle battery when remove normal battery but other is fail
+8.Fix system cannot charge when flash EC and battery over discharge 
+Known issue:
+N/A
+Modified:
+1.Change Docking LAN wake flag to APCI ram 0xC3 bit0.
+2.Disable smbus debug card support
+
+Add function:
+1.Send Qevent 4B/4D, when battery charge/discharge status change
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E017A.ROM)		06-20-2017
+
+File name : K14E017A.ROM
+Base on   : K14E016A.ROM
+Checksum  : 0x0145EBEB
+EC Version S/N: 17
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "LG battery will communication fail, when battery insert.".
+2. Fix battery FW update fail.
+3. Fix issue "if battery once communication fail that OS will report battery RSOC is 0%".
+4. Fix issue "battery will not charging when airplane mode be enabled".
+5. Fix issue "Custom charge threshold function abnormal.".
+Known issue:
+N/A
+Modified:
+1. Follow power team recommend to change "AC plug-in" judge method from GPIO AC_IN to AC_IN + DCIN_ATTACHED2 + Type-C adaptor exist flag.
+2. Tuning TPS65982D's initial timing after turn on EC_ON.
+
+Add function:
+N/A
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E016A.ROM)		06-13-2017
+
+File name : K14E016A.ROM
+Base on   : K14E015A.ROM
+Checksum  : 0x014D2AEC
+EC Version S/N: 16
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "BIOS can not flash after implement Keyboard backlight MFG control function".
+2. Fix issue "Battery Charge Start/Stop control function with EC I/F Space offset B0h-B3h does not work".
+3. Fix issue "Sticky still keep locked when Fn Sticky key lock,press B(P,S,K,4) key and press Fn key again".
+Known issue:
+
+Modified:
+1. Modify FUD update method for battery hot attached.
+2. Changing DASH SMBus interface setting to avoid EC take away the other device reply data.
+
+Add function:
+1. Enable docking power button function.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E015A.ROM)		06-06-2017
+
+File name : K14E015A.ROM
+Base on   : K14E014A.ROM
+Checksum  : 0x014CA9B7
+EC Version S/N: 15
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix issue "The battery SW authentication will determine pass with un-authentication battery".
+Known issue:
+
+Modified:
+
+Add function:
+1. Add keyboard back light MFG test function.
+2. Add battery switch return to second battery debounce time 500ms.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E014A.ROM)		05-31-2017
+
+File name : K14E014A.ROM
+Base on   : K14E013A.ROM
+Checksum  : 0x014D98E9
+EC Version S/N: 14
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix units keyboard "Home""End""Ins""Del""PrsSc""PgUp""PgDn" key function error.
+2. Fix power on System with Unauthorized battery, there is no "Lenovo Settings Power" dialog popup at desktop.
+3. Fix SW authentication bit will be set when HW Authentication fail.
+4. Fix second battery authentication cannot retry 3 times.
+5. Fix main battery control stop discharging from the battery/force to discharge from the battery/ refresh the battery function fail.
+6. Fix battery FUD setting fail.
+Known issue:
+
+Modified:
+
+Add function:
+
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E013A.ROM)		05-23-2017
+
+File name : K14E013A.ROM
+Base on   : K14E012A.ROM
+Checksum  : 0x014F9DA7
+EC Version S/N: 13
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix the Fn + P and Fn + B function key issue.
+2. Fix system can't charge when main battery more then the 80% and second battery less the 80%.
+3. Fix the Cannot use keyboard to input when enable sticky key issue.
+4. Fix second battery stop charging E/I 0xB3 setting error.
+5. Fix system stop charge when main battery fully charge and second battery RSOC is 80%.
+6. Fix discharge flag cannot clear with EC I/F 0x38/0x39.
+Known issue:
+Modified:
+1. Modify battery communication process to support dual battery.
+2. modify power on process.
+3. SMBUS kernel update, implement channel 4~6 send byte/receive byte command.
+4. Follow YMT tool design to change battery first use date function.
+5.  Revert dual battery charge flow to main battery 0 to 80% second battery 0 to 100% than main from 80% to 100%.
+Add function:
+1. Add  hidden keys function: Fn + Left arrow -> Home, Fn + Right arrow -> End.
+2. Implement type-C docking function..
+3. Add three battery exist checking define modules for two battery.
+4. Implement Refresh battery of dual battery function.
+5. Add Fn+F1 hotkey in Non ACPI.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E012A.ROM)		05-16-2017
+
+File name : K14E012A.ROM
+Base on   : K14E011A.ROM
+Checksum  : 0x01543793
+EC Version S/N: 12
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix ECR433777 The Second Battery charge firstly when Main Battery and Second Battery Capacity all greater than 80%.
+2. Fix SW authentication fail for dual battery.
+Known issue:
+Modified:
+1. Disable any key wake up except Fn key.
+2. Improve #6744, Fix Battery Status in EC RAM offset 38h(for Front Battery) 39h(for Rear Battery) Discharge state doesn't meet spec define
+3. Improve #6746, fix ECR433829 The power icon in Taskbar change delay about 3 seconds when detach AC adapter. 
+4. Improve G-sensor initial timing when S3 resume.
+5. Modify trickle charge and trickle to quick charge condition .
+6. Modify charge/discharge status when battery under trickle charge .
+Add function:
+1. Save all ram and GPIO to rom when abnormal shutdown and press Fn=SA.
+2. Set charge IC Switching Frequency to 800Khz when AC IN.
+3. Implement PEC check to SMBUS Wblock protocol.
+4. Add G-sensor BMA255 self-test mode function.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E011A.ROM)		05-09-2017
+
+File name : K14E011A.ROM
+Base on   : K14E010A.ROM
+Checksum  : 0x0162C653
+EC Version S/N: 11
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix ECR433226 System still power on after Disable Built-in Battery on BIOS setup in DC mode.
+2. Fix name space B1/B3 function fail.
+3. Fix battery discharge of TWR report error
+4. Fix ECR433473 : [Windu/WV4 AMD W10&W7]Fn and Ctrl key swap has no function..
+Known issue:
+Modified:
+1. Update ITE kernel code.
+2.  Modify Threshold for second battery support.
+3. Update kernel for SMBus timing turning.
+4. Remove check_keyscan_buffer_half_full function for EC keyboard debug function.
+Add function:
+1. Implement SMB check point card function.
+2. Add keyboard backlight detect pin define and function.
+3. Add new G-sensor IC KX022 define and function.
+4. Add ACPI RAM "POWER_ON_BY_AC" define and function.
+5. Implement bottom tamper detect function
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E010A.ROM)		05-02-2017
+
+File name : K14E010A.ROM
+Base on   : K14E009A.ROM
+Checksum  : 0x01686197
+EC Version S/N: 10
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix compiling wrong with "REV0_BYTE1".
+2. Fix Secondary battery charge start/stop capacity address setting error.
+3. Fix keyboard backlight bug "KB keep on after power on and cause Fn+Space no function".
+Known issue:
+Modified:
+1. Remove battery check portion of unlock-shipping mode.
+2. Change ram address of some variable in HOOK.H.
+3. Modify SMB_Channel_AUTO_detect to support the same SMBUS address for 2 batteries.
+4. Modify battery luck mode function to support dual battery.
+5. Modify battery long life span mode function and long run time mode to support dual battery.
+6. Update kernel code for "SERIRQ power level select follow VCC".
+7. Enable DA275 fan auto control and update fan table to "WV4_AMD_FAN_Control_Table_ver02_20170314.xls".
+8. Modify Battery Status in EC RAM offset 38h(for Front Battery) 39h(for Rear Battery) Discharge state doesn't meet spec define.
+9. Remove Polling update chargeIC, only update 1 times.
+Add function:
+1. Implement dual battery trickle charge function.
+2. Check and disable G-sensor function, if G-sensor power(Vs) be turn off.
+3. Implement thermal monitor function.
+4. Add ACPI RAM "EXTERNAL_POWER_SOURCE_ID" define and function.
+5. Add DA275 Insert key function..
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E009A.ROM)		04-25-2017
+
+File name : K14E009A.ROM
+Base on   : K14E008A.ROM
+Checksum  : 0x016A6E94
+EC Version S/N: 09
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix ECR430884 Preload image occur black screen w/Power LED light and fan working.
+2. Delay 10ms to detect "DCIN_ATTACHED2" for adaptor watt detect function to fix issue "EC will get wrong adaptor type(Type-C) and wrong data and cause UN-know adaptor".
+3. Fix MBID value by project.h define and ignore EEPROM data to avoid wrong EEPROM for 274/475 keyboard matrix table select.
+Known issue:
+Modified:
+1. Modify F1~F12 scan code cannot repeat.
+2. Improve ADP_ID ADC speed to fix issue "Some time will get wrong data and cause UN-know adaptor"
+Add function:
+1. Add charger IC "LOW_POWER_MODE_EN" control function as power request.
+2. Add keyboard backlight and Fn+space function..
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E008A.ROM)		04-18-2017
+
+File name : K14E008A.ROM
+Base on   : K14E007A.ROM
+Checksum  : 0x016C02EF
+EC Version S/N: 08
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+Known issue:
+Modified:
+1. Modify Fan speed calculation formula to prevent EC hang up.
+Add function:
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E007A.ROM)		04-10-2017
+
+File name : K14E007A.ROM
+Base on   : K14E006A.ROM
+Checksum  : 0x016BC3A4
+EC Version S/N: 07
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1. Fix B2/B3 CMD access fail.
+2. Fix three port issue "Type-C adaptor can not be detected if attaching Type-C adaptor after Valw on".
+Known issue:
+Modified:
+1. Modify device detect setting to meet HW design.
+2. Change Fan table define.
+3. Switch change BATT_CHG_LED# and PWR_STATUS_LED# define.
+4. Change DA475 LOGO led behavior from high to low active.
+5. Change charger IC inputer current define of Type-C  adaptor max-power.
+6. Removing some charger IC ChargeOption1(0x30) control function of max-power for power team request.
+7. Disable DA275 "BATTCHGLED" and "PWRSTATUSLED" function.
+8. Update kernel code to enable battery support PEC function.
+9. Change DCIN_ATTACHED2 pin define for FVT power design change(For FVT, can not using on EVT).
+Add function:
+1. Add CAPS LOCK LED control by BIOS function.
+2. Add 2nd battery unlock shipping mode function for two battery.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E006A.ROM)		03-21-2017
+
+File name : K14E006A.ROM
+Base on   : K14E005A.ROM
+Checksum  : 0x01695224
+EC Version S/N: 06
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+1.Fix issue "EC will hang when S3/S4/S5/warm boot long run".
+Known issue:
+Modified:
+1.Clear BATError counter after normal get batter date.
+2.Return to quick charging after battery recovery to normal(communication pass or request charging current>300mA).
+3.Remove some debug log.
+Add function:
+1.Add ACPI SMBus command debug function.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E005A.ROM)		03-14-2017
+
+File name : K14E005A.ROM
+Base on   : K14E004A.ROM
+Checksum  : 0x016923DB
+EC Version S/N: 05
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+Known issue:
+Modified:
+1.Change SMBus channel 3 to INPUT mode before EC entry sleep for S5/G3 power consumption.
+2.Store "AOU support DC mode" status to EEPROM for G3 power consumption.
+3.Change WV4 LOGO LED control from high active to low active.
+4.Change Fan RPM calculation formula to fix issue "EC RPM value do not meet real Fan RPM".
+Add function:
+1.Implement trickle function for single battery.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E004A.ROM)		03-07-2017
+
+File name : K14E004A.ROM
+Base on   : K14E003A.ROM
+Checksum  : 0x0169F2A7
+EC Version S/N: 04
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+Known issue:
+Modified:
+1.Clear BATError counter after normal get batter date.
+Add function:
+1.Implement Dash function.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E003A.ROM)		03-01-2017
+
+File name : K14E003A.ROM
+Base on   : K14E002A.ROM
+Checksum  : 0x016C262A
+EC Version S/N: 03
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+Known issue:
+Modified:
+N/A
+Add function:
+1.Implement "Enhanced Pc Beep" function.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E002A.ROM)		02-21-2017
+
+File name : K14E002A.ROM
+Base on   : K14E001A.ROM
+Checksum  : 0x01727540
+EC Version S/N: 02
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+Known issue:
+Modified:
+1.Modify GPIO setting of Charge LED to meet HW design.
+2.Modify fan ID define to avoid fan table load error.
+3.Change Tp65982 three port control command.
+4.Enable auto detect SMBUS address function and implement exception function.
+Add function:
+1.Add DA275 folder and distinguish "Battery Address" and "Build ID".
+2.Add GPIO "BEEP_ENABLE" pin define and function.
+3.Add G-sensor BOSCH BMA255 define and function.
+4.Implement dual battery charge/discharge function.
+5.Implement 2nd battery eject pin function.
+**************************************************************************
+DAx75 ITE IT8186 EC BIOS release (Rev. K14E001A.ROM)		02-09-2017
+
+File name : K14E001A.ROM
+Base on   : K14E001A.T16
+Checksum  : 0xD35BFAA6
+EC Version S/N: 01
+Notification:
+        1.> Need flash EC's boot block? --> No
+Fixed:
+Known issue:
+Modified:
+1. Change GPIO "USB_ON" control method.
+2. Fis issue "Send wrong keyboard scan code".
+3. Set Enable ACPI flag under ACPI command 0x82
+Add function:
+**************************************************************************
