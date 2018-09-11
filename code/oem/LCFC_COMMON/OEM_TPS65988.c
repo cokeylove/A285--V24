@@ -4323,14 +4323,14 @@ BYTE UsbPdcRequest(BYTE usb_pdc_id, USB_PDC_REQ*request_packet, BYTE cmd, WORD p
                 case USB_PDC_REQ_GET_RX_SOURCE_PDO:
                     SMB3_DATA[0] = 'G';
                     SMB3_DATA[1] = 'S';
-                    SMB3_DATA[2] = 'k';
+                    SMB3_DATA[2] = 'r';
                     SMB3_DATA[3] = 'C';
                     // Isaac Pdc_Data = RETRIEVE_SOURCE_CAPABILITIES;
                     break;
                 case USB_PDC_REQ_GET_RX_SINK_PDO:
                     SMB3_DATA[0] = 'G';
                     SMB3_DATA[1] = 'S';
-                    SMB3_DATA[2] = 'r';
+                    SMB3_DATA[2] = 'k';
                     SMB3_DATA[3] = 'C';
                     // Isaac Pdc_Data = RETRIEVE_SINK_CAPABILITIES;
                     break;
@@ -4505,65 +4505,33 @@ BYTE UsbPdcRequest(BYTE usb_pdc_id, USB_PDC_REQ*request_packet, BYTE cmd, WORD p
                     //RamDebug(TempValue);
                     if(TempValue == 0)
                     {
-                        i = 0;
-                        if(bRSMBusBlock(chSMB_TYPEC, SMbusRBK, TempAddr, TPS65988_USER_SID_STATUS,SMB3_DATA,bRead_I2C_NULL))
-                        {
-                            if(SMB3_DATA[0] != 0x00)
-                            {
-                                SMB3_DATA_TEMP[0] = 0xEF;
-                                SMB3_DATA_TEMP[1] = 0x17;
-                                if(bWSMBusBlock(chSMB_TYPEC, SMbusWBK, TempAddr, TempTypeData, &SMB3_DATA_TEMP[0], 2, SMBus_NoPEC))
-                                {
-                                    SMB3_DATA[0] = 'G';
-                                    SMB3_DATA[1] = 'C';
-                                    SMB3_DATA[2] = 'd';
-                                    SMB3_DATA[3] = 'm';
-                                    if(bWSMBusBlock(chSMB_TYPEC, SMbusWBK, TempAddr, tmpTYPCCmd, &SMB3_DATA[0], 4, SMBus_NoPEC))
-                                    {
-                                        if(bRSMBusBlock(chSMB_TYPEC, SMbusRBK, TempAddr, TempTypeData,SMB3_DATA_TEMP,bRead_I2C_NULL))
-                                        {
-                                            Ucsi_message_in[(i * 6) +0] = 0xEF;
-                                            Ucsi_message_in[(i * 6) +1] = 0x17;
-                                            Ucsi_message_in[(i * 6) +2] = SMB3_DATA_TEMP[0];
-                                            Ucsi_message_in[(i * 6) +3] = SMB3_DATA_TEMP[1];
-                                            Ucsi_message_in[(i * 6) +4] = SMB3_DATA_TEMP[2];
-                                            Ucsi_message_in[(i * 6) +5] = SMB3_DATA_TEMP[3];
-                                            i++;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        if(bRSMBusBlock(chSMB_TYPEC, SMbusRBK, TempAddr, TPS65988_DP_SID_STATUS, SMB3_DATA,bRead_I2C_NULL))
-                        {
-                            if(SMB3_DATA[0] != 0x00)
-                            {
-                                SMB3_DATA_TEMP[0] = 0x01;
-                                SMB3_DATA_TEMP[1] = 0xFF;
-                                if(bWSMBusBlock(chSMB_TYPEC, SMbusWBK, TempAddr, TempTypeData, &SMB3_DATA_TEMP[0], 2, SMBus_NoPEC))
-                                {
-                                    SMB3_DATA[0] = 'G';
-                                    SMB3_DATA[1] = 'C';
-                                    SMB3_DATA[2] = 'd';
-                                    SMB3_DATA[3] = 'm';
-                                    if(bWSMBusBlock(chSMB_TYPEC, SMbusWBK, TempAddr, tmpTYPCCmd, &SMB3_DATA[0], 4, SMBus_NoPEC))
-                                    {
-                                        if(bRSMBusBlock(chSMB_TYPEC, SMbusRBK, TempAddr, TempTypeData,SMB3_DATA_TEMP,bRead_I2C_NULL))
-                                        {
-                                            Ucsi_message_in[(i * 6) +0] = 0x01;
-                                            Ucsi_message_in[(i * 6) +1] = 0xFF;
-                                            Ucsi_message_in[(i * 6) +2] = SMB3_DATA_TEMP[0];
-                                            Ucsi_message_in[(i * 6) +3] = SMB3_DATA_TEMP[1];
-                                            Ucsi_message_in[(i * 6) +4] = SMB3_DATA_TEMP[2];
-                                            Ucsi_message_in[(i * 6) +5] = SMB3_DATA_TEMP[3];
-                                            i++;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        Ucsi_cci[1] = (i*6);
-                    }
+						i = 0;
+						if(UCSI_GET_ALTERNATE_MODES_COMMAND_ALTERNATE_MODE_OFFSET == 0)
+						{
+		            		Ucsi_message_in[0] = 0xEF;
+							Ucsi_message_in[1] = 0x17;
+							Ucsi_message_in[2] = 0x01;
+							Ucsi_message_in[3] = 0x00;
+							Ucsi_message_in[4] = 0x00;
+							Ucsi_message_in[5] = 0x00;
+							Ucsi_cci[1] = 0x06;
+						}
+						else if(UCSI_GET_ALTERNATE_MODES_COMMAND_ALTERNATE_MODE_OFFSET == 1)
+						{
+					    	Ucsi_message_in[0] = 0xFF;
+							Ucsi_message_in[1] = 0x01;
+							Ucsi_message_in[2] = 0x01;
+							Ucsi_message_in[3] = 0x00;
+							Ucsi_message_in[4] = 0x00;
+							Ucsi_message_in[5] = 0x00;
+							Ucsi_cci[1] = 0x06;
+						}
+						else
+						{
+							Ucsi_cci[1] = 0;
+						}
+					}
+
                     else
                     {
                         SMB3_DATA[0] = 0x01 + (((TempValue &0x03) - 1) << 4);

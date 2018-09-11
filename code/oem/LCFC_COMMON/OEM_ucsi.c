@@ -759,7 +759,7 @@ BYTE connector_change;
             Ucsi_cci[3] = ((Ucsi_cci[3]&0xD0)|0x80);
             break;
         case UCSI_COMMAND_GET_ALTERNATE_MODES:      // 0x0C
-            Ucsi_cci[1] = 0x00;
+           //Ucsi_cci[1] = 0x00;
             //Ucsi_cci[1] = (Ucsi_cci[3]&0x40)?0x00:Ucsi_cci[1];  // Note: If successful, set to the number of bytes returned in GET_ALTERNATE_MODES Data up to MAX_DATA_LENGTH. Else set to 0x00.
             Ucsi_cci[3] = ((Ucsi_cci[3]&0xD0)|0x80);
             break;
